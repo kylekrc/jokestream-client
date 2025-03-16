@@ -30,7 +30,27 @@ function App() {
     joke.length > 100 ? "min-h-64 p-6" : joke.length > 50 ? "min-h-56 p-5" : "min-h-48 p-4";
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600 p-4 relative">
+      {/* Instruction Button */}
+      <div className="absolute top-4 right-4 group">
+        <button className="bg-white text-indigo-700 font-bold rounded-md px-4 py-2 shadow-md hover:bg-gray-200 transition">
+          ?
+        </button>
+        {/* Tooltip */}
+        <div className="absolute right-0 mt-2 w-56 p-3 bg-white text-gray-700 text-sm rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <p>Click "Get a Joke!" to fetch a random joke.</p>
+          <p className="mt-1">Visit the server:</p>
+          <a
+            href="https://jokestream-server.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline"
+          >
+            Joke API Server
+          </a>
+        </div>
+      </div>
+
       <h1 className="text-5xl font-extrabold text-center text-white drop-shadow-lg">
         JokeStream
       </h1>
