@@ -12,7 +12,7 @@ function App() {
     setFlip(true); // Start flip animation
 
     try {
-      const res = await fetch("http://localhost:5176/joke");
+      const res = await fetch("https://jokestream-server.vercel.app/joke");
       const data = await res.json();
       setJoke(data.joke);
     } catch (error) {
